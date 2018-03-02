@@ -14,5 +14,9 @@
     "object"
   ],
   "author": "yusunglee2074",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yusunglee2074/vue-jsonarray-csv"
+  },
   "license": "ISC"
 }
