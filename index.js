@@ -1,15 +1,17 @@
 <template>
-  <div id="Excel" class="">
-    <button @click="JSONArrayConverToCSV(htmlTable, fileName, true)">엑셀로 추출</button>
+  <div id="Excel" :class="{ divClass: divClass }">
+    <button @click="JSONArrayConverToCSV(jsonArray, fileName, true)">{{ buttonName }}</button>
   </div>
 </template>
 <script>
   export default {
     props: [
-      'htmlTable',
+      'jsonArray',
       'fileName',
       'keys',
-      'firstRow'
+      'firstRowForLabel',
+      'buttonName',
+      'divClass'
     ],
     name: 'Excel',
     methods: {
@@ -23,7 +25,7 @@
         //This condition will generate the Label/Header
         if (ShowLabel) {
           var row = "";
-          row = this.firstRow
+          row = this.firstRowForLabel
           //append Label row with line break
           CSV += row + '\r\n';
         }
